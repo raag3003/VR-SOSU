@@ -413,6 +413,26 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &-3870319088481669339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b213d3e3c7f3109449eb46a4c8ee42f0, type: 3}
+  m_Name: XrPerformanceSettingsFeature VisionOS
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: XR Performance Settings
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.extension.performance_settings
+  openxrExtensionStrings: XR_EXT_performance_settings
+  company: Unity
+  priority: 0
+  required: 0
 --- !u!114 &-3863546373624321825
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -450,6 +470,26 @@ MonoBehaviour:
   version: 0.0.1
   featureIdInternal: com.unity.openxr.feature.input.palmpose
   openxrExtensionStrings: XR_EXT_palm_pose
+  company: Unity
+  priority: 0
+  required: 0
+--- !u!114 &-3270165911085954473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b213d3e3c7f3109449eb46a4c8ee42f0, type: 3}
+  m_Name: XrPerformanceSettingsFeature WebGL
+  m_EditorClassIdentifier: 
+  m_enabled: 0
+  nameUi: XR Performance Settings
+  version: 1.0.0
+  featureIdInternal: com.unity.openxr.feature.extension.performance_settings
+  openxrExtensionStrings: XR_EXT_performance_settings
   company: Unity
   priority: 0
   required: 0
@@ -600,10 +640,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f0ebc320a151d3408ea1e9fce54d40e, type: 3}
   m_Name: OpenXR Package Settings
   m_EditorClassIdentifier: 
-  Keys: 0100000007000000
+  Keys: 01000000070000000d00000024000000
   Values:
   - {fileID: 6604462444133877913}
   - {fileID: 7980959429861576678}
+  - {fileID: 7371196442572018253}
+  - {fileID: 4354860288945023562}
 --- !u!114 &14871567722141632
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,6 +761,29 @@ MonoBehaviour:
   company: Unity
   priority: 0
   required: 0
+--- !u!114 &4354860288945023562
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: VisionOS
+  m_EditorClassIdentifier: 
+  features:
+  - {fileID: -3870319088481669339}
+  m_renderMode: 1
+  m_autoColorSubmissionMode: 1
+  m_colorSubmissionModes:
+    m_List: 00000000
+  m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
+  m_optimizeBufferDiscards: 0
+  m_symmetricProjection: 0
+  m_foveatedRenderingApi: 0
 --- !u!114 &5497844233595687879
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -772,25 +837,48 @@ MonoBehaviour:
   m_Name: Standalone
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -5101186762950771452}
-  - {fileID: -7528501960559095556}
   - {fileID: -8662458828862019012}
-  - {fileID: -3863546373624321825}
   - {fileID: 2032700440286162629}
+  - {fileID: -3863546373624321825}
+  - {fileID: -8287560534638321032}
   - {fileID: -5049172492326110451}
+  - {fileID: -1485495455659569716}
+  - {fileID: 5497844233595687879}
+  - {fileID: -161798596966271548}
+  - {fileID: -5329190688685517471}
+  - {fileID: -6404195759333617430}
+  - {fileID: -1957878257916812770}
   - {fileID: 14871567722141632}
   - {fileID: -8188511068528158834}
-  - {fileID: 5497844233595687879}
-  - {fileID: -7080984386245064682}
-  - {fileID: -5329190688685517471}
-  - {fileID: -1485495455659569716}
+  - {fileID: -7528501960559095556}
   - {fileID: -4618129864567672494}
-  - {fileID: -1957878257916812770}
-  - {fileID: -6404195759333617430}
   - {fileID: -3351264585386748429}
+  - {fileID: -5101186762950771452}
+  - {fileID: -7080984386245064682}
   - {fileID: -6508877662970372972}
-  - {fileID: -161798596966271548}
-  - {fileID: -8287560534638321032}
+  m_renderMode: 1
+  m_autoColorSubmissionMode: 1
+  m_colorSubmissionModes:
+    m_List: 00000000
+  m_depthSubmissionMode: 0
+  m_spacewarpMotionVectorTextureFormat: 0
+  m_optimizeBufferDiscards: 0
+  m_symmetricProjection: 0
+  m_foveatedRenderingApi: 0
+--- !u!114 &7371196442572018253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b5a1f07dc5afe854f9f12a4194aca3fb, type: 3}
+  m_Name: WebGL
+  m_EditorClassIdentifier: 
+  features:
+  - {fileID: -3270165911085954473}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
@@ -853,23 +941,23 @@ MonoBehaviour:
   m_Name: Android
   m_EditorClassIdentifier: 
   features:
-  - {fileID: -1746158706219770316}
-  - {fileID: -5311344626738792810}
-  - {fileID: -4935816205395932597}
-  - {fileID: -4118236064926853288}
   - {fileID: 7508749267971821038}
-  - {fileID: -4372995344992409361}
   - {fileID: -145958223878057089}
-  - {fileID: -4482285989479275007}
-  - {fileID: -3926319332317450492}
-  - {fileID: -1930735198350862346}
-  - {fileID: 2911433196711850455}
-  - {fileID: -8495832636042699008}
-  - {fileID: 6259975310036311255}
-  - {fileID: -8517521666650415898}
-  - {fileID: 2979656328660459692}
-  - {fileID: 7383832939769649510}
+  - {fileID: -4372995344992409361}
   - {fileID: 1058552168892974454}
+  - {fileID: -4482285989479275007}
+  - {fileID: 2911433196711850455}
+  - {fileID: -1930735198350862346}
+  - {fileID: -4118236064926853288}
+  - {fileID: -8517521666650415898}
+  - {fileID: 6259975310036311255}
+  - {fileID: -3926319332317450492}
+  - {fileID: -4935816205395932597}
+  - {fileID: -5311344626738792810}
+  - {fileID: -8495832636042699008}
+  - {fileID: 2979656328660459692}
+  - {fileID: -1746158706219770316}
+  - {fileID: 7383832939769649510}
   m_renderMode: 1
   m_autoColorSubmissionMode: 1
   m_colorSubmissionModes:
