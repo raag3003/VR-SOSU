@@ -10,7 +10,7 @@
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
 /[Aa]ssets/StreamingAssets*
-/[Aa]ssets/LLMUnity*
+# /[Aa]ssets/LLMUnity*
 
 # MemoryCaptures can get excessive in size.
 # They also could contain extremely sensitive data
