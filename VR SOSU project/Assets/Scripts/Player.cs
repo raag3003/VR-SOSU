@@ -6,6 +6,8 @@ using TMPro;
 
 public class Player : MonoBehaviour
 {
+    public DictationScript dictationScript;
+
     //public LLM llm;
     public LLMCharacter llm;
     public Rigidbody m_Rigidbody;
@@ -14,7 +16,7 @@ public class Player : MonoBehaviour
     public string username;
     public GameObject chatPanel, textObject, chatBox;
     public TMP_InputField chatField;
-    public Color playerMessage, patientMessage, info;
+    public Color playerMessage, tutorMessage, info;
     private bool chatIsActive = false;
     private int maxMessages = 25;
 
@@ -32,8 +34,25 @@ public class Player : MonoBehaviour
         {
             RemoveTypingIndicator();
             Debug.Log(reply);
-            SendMessageToChat("Patient: " + reply, Message.MessageType.patientMessage);
+            SendMessageToChat("Tutor: " + reply, Message.MessageType.tutorMessage);
             hasLLMResponded = true;
+        }
+    }
+
+    private void HandleDictationResult(string text)
+    {
+        SendMessageToChat(username + ": " + text, Message.MessageType.playerMessage);
+        hasLLMResponded = false;
+        isLLMProcessing = true;
+        ShowTypingIndicator();
+        _ = llm.Chat(text, HandleReply, ReplyCompleted);
+    }
+
+    void OnDestroy()
+    {
+        if (dictationScript != null)
+        {
+            dictationScript.OnTextRecognized -= HandleDictationResult;
         }
     }
 
@@ -42,6 +61,14 @@ public class Player : MonoBehaviour
         isLLMProcessing = false;
         RemoveTypingIndicator();
         Debug.Log("LLM response completed");
+    }
+
+    private void Start()
+    {
+        if (dictationScript != null)
+        {
+            dictationScript.OnTextRecognized += HandleDictationResult;
+        }
     }
 
     private void Update()
@@ -92,7 +119,7 @@ public class Player : MonoBehaviour
 
     private void ShowTypingIndicator()
     {
-        SendMessageToChat("Patient is typing...", Message.MessageType.info, typingIndicatorId);
+        SendMessageToChat("Tutor is typing...", Message.MessageType.info, typingIndicatorId);
     }
 
     private void UpdateTypingIndicator()
@@ -102,10 +129,10 @@ public class Player : MonoBehaviour
             if (msg.id == typingIndicatorId)
             {
                 string currentText = msg.textObject.text;
-                if (currentText.EndsWith("...")) msg.textObject.text = "Patient is typing.";
-                else if (currentText.EndsWith("..")) msg.textObject.text = "Patient is typing...";
-                else if (currentText.EndsWith(".")) msg.textObject.text = "Patient is typing..";
-                else msg.textObject.text = "Patient is typing.";
+                if (currentText.EndsWith("...")) msg.textObject.text = "Tutor is typing.";
+                else if (currentText.EndsWith("..")) msg.textObject.text = "Tutor is typing...";
+                else if (currentText.EndsWith(".")) msg.textObject.text = "Tutor is typing..";
+                else msg.textObject.text = "Tutor is typing.";
                 break;
             }
         }
@@ -152,8 +179,8 @@ public class Player : MonoBehaviour
             case Message.MessageType.playerMessage:
                 color = playerMessage;
                 break;
-            case Message.MessageType.patientMessage:
-                color = patientMessage;
+            case Message.MessageType.tutorMessage:
+                color = tutorMessage;
                 break;
             case Message.MessageType.info:
                 color = info;
@@ -176,7 +203,7 @@ public class Message
 
     public enum MessageType
     {
-        patientMessage,
+        tutorMessage,
         playerMessage, 
         info
     }
