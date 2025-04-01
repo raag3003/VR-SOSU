@@ -173,7 +173,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 76a1603ceea00e546b7087ca21594cf4, type: 3}
       propertyPath: m_Name
-      value: Patient
+      value: Tutor
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 76a1603ceea00e546b7087ca21594cf4, type: 3}
       propertyPath: m_TagString
@@ -253,12 +253,11 @@ MonoBehaviour:
   stream: 0
   playerName: healthcare student
   AIName: Tutor
-  prompt: "You are a tutor guiding a healthcare student (SOSU student, a social and
-    healthcare assistant in training). Always begin by asking the student: 'How would
-    you organize the care for a citizen with chronic pain, and what aspects of their
-    well-being should you consider?' Never give direct answers\u2014ask follow-up
-    questions, provide hints, and encourage critical thinking. Keep your responses
-    short and focused."
+  prompt: 'You are a tutor guiding a healthcare student (SOSU student, a social and
+    healthcare assistant in training). Always start by asking: ''How would you organize
+    the care for a citizen with chronic pain, and what aspects of their well-being
+    should you consider?'' Never give direct answers. Only respond with ultra-short
+    hints, questions, or keywords. Keep replies with as few words as possible.'
   setNKeepToPrompt: 1
   chat: []
   grammarString: 
@@ -284,7 +283,7 @@ MonoBehaviour:
   dontDestroyOnLoad: 1
   contextSize: 8192
   batchSize: 512
-  model: llama-3.2-1b-instruct-q4_k_m.gguf
+  model: llama-3.2-3b-instruct-q4_k_m.gguf
   chatTemplate: llama3 chat
   lora: 
   loraWeights: 
@@ -297,7 +296,7 @@ MonoBehaviour:
   minContextLength: 0
   maxContextLength: 131072
   embeddingsOnly: 0
-  embeddingLength: 2048
+  embeddingLength: 3072
 --- !u!65 &97120509
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2031,7 +2030,19 @@ MonoBehaviour:
   deadTime: 1
   onPressed:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1764941439}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
   onReleased:
     m_PersistentCalls:
       m_Calls: []
@@ -2404,8 +2415,8 @@ MonoBehaviour:
   chatBox: {fileID: 1764941439}
   chatField: {fileID: 1854718762}
   playerMessage: {r: 0, g: 0.797081, b: 1, a: 1}
-  tutorMessage: {r: 1, g: 0, b: 0, a: 1}
-  info: {r: 0, g: 1, b: 0.065149784, a: 1}
+  tutorMessage: {r: 0.9924557, g: 1, b: 0.09748411, a: 1}
+  info: {r: 0.6645701, g: 0.66666657, b: 0.66470987, a: 1}
   messageList: []
 --- !u!4 &564158279 stripped
 Transform:
@@ -2514,8 +2525,8 @@ Transform:
   m_GameObject: {fileID: 658413766}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 233.03, y: 117.83, z: -185.44}
-  m_LocalScale: {x: 3.7779, y: 3.7779, z: 3.7779}
+  m_LocalPosition: {x: 228.021, y: 118.702, z: -176.947}
+  m_LocalScale: {x: 1.2979884, y: 1.2979884, z: 1.2979884}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1788123861}
@@ -3182,7 +3193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.29559743, g: 0.29559743, b: 0.29559743, a: 0.6431373}
+  m_Color: {r: 0.18867922, g: 0.17859258, b: 0.17859258, a: 0.90588236}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -3874,6 +3885,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1563895500}
   - component: {fileID: 1563895499}
+  - component: {fileID: 1563895501}
   m_Layer: 0
   m_Name: Voice
   m_TagString: Untagged
@@ -3903,12 +3915,24 @@ Transform:
   m_GameObject: {fileID: 1563895498}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 224.90599, y: 117.02064, z: -188.93997}
+  m_LocalPosition: {x: 221.563, y: 118.1, z: -186.33}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1563895501
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1563895498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a5ed20b580a78ef418961b6fc65fc2c3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1576493810
 GameObject:
   m_ObjectHideFlags: 0
@@ -4674,6 +4698,79 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1740306578
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.2298
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.2298
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.2298
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 228.03
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 118.479
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -176.79
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -7635826562936255635, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: b859ebeb85a76b6438801ab44438ce11, type: 2}
+    - target: {fileID: 919132149155446097, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      propertyPath: m_Name
+      value: Tabel
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
 --- !u!1 &1764941439
 GameObject:
   m_ObjectHideFlags: 0
@@ -5194,6 +5291,7 @@ SceneRoots:
   - {fileID: 832575519}
   - {fileID: 280607576}
   - {fileID: 1695550827}
+  - {fileID: 1740306578}
   - {fileID: 97120504}
   - {fileID: 1528272226}
   - {fileID: 1621869154}

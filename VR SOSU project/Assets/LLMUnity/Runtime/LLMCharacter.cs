@@ -318,7 +318,7 @@ namespace LLMUnity
             InitGrammar();
         }
 
-        protected virtual List<string> GetStopwords()
+        public virtual List<string> GetStopwords()
         {
             if (!CheckTemplate()) return null;
             List<string> stopAll = new List<string>(template.GetStop(playerName, AIName));

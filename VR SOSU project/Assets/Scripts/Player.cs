@@ -35,6 +35,7 @@ public class Player : MonoBehaviour
             RemoveTypingIndicator();
             Debug.Log(reply);
             SendMessageToChat("Tutor: " + reply, Message.MessageType.tutorMessage);
+            TextToSpeech.Speak(reply);
             hasLLMResponded = true;
         }
     }
@@ -42,7 +43,6 @@ public class Player : MonoBehaviour
     private void HandleDictationResult(string text)
     {
         SendMessageToChat(username + ": " + text, Message.MessageType.playerMessage);
-        hasLLMResponded = false;
         isLLMProcessing = true;
         ShowTypingIndicator();
         _ = llm.Chat(text, HandleReply, ReplyCompleted);
@@ -61,6 +61,7 @@ public class Player : MonoBehaviour
         isLLMProcessing = false;
         RemoveTypingIndicator();
         Debug.Log("LLM response completed");
+        hasLLMResponded = true;
     }
 
     private void Start()
