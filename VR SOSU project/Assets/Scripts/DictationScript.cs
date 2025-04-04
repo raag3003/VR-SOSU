@@ -1,7 +1,10 @@
+using System.Collections;
+using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
+using UnityEngine.Networking;
 
 public class DictationScript : MonoBehaviour
 {
@@ -10,8 +13,11 @@ public class DictationScript : MonoBehaviour
 
     // Liste af strings som gemmer outputtet af dikationen
     public System.Action<string> OnTextRecognized;
+    public DictationRecognizer m_DictationRecognizer;
 
-    private DictationRecognizer m_DictationRecognizer;
+    private string[] currentAcceptableAnswers;
+    private System.Action onCorrectAnswer;
+    private System.Action onIncorrectAnswer;
 
     void Start()
     {
@@ -21,8 +27,7 @@ public class DictationScript : MonoBehaviour
         m_DictationRecognizer.DictationResult += (text, confidence) =>
         {
             Debug.LogFormat("Dictation result: {0}", text);
-            /*if (m_Recognitions != null)
-                m_Recognitions.text += text + "\n";*/
+            CheckAnswer(text);
 
             // Sender diktationen til LLM'en
             OnTextRecognized?.Invoke(text);
@@ -39,13 +44,43 @@ public class DictationScript : MonoBehaviour
             Debug.LogErrorFormat("Dictation error: {0}; HResult = {1}.", error, hresult);
         };
 
-        // Start()-metoden og det at den ligger inde i unity's Start() metode gør, at den begynder at lytte fra første frame af spillet.
-        m_DictationRecognizer.Start();
+        if (player.chatIsActive)
+            // Start()-metoden og det at den ligger inde i unity's Start() metode gør, at den begynder at lytte fra første frame af spillet.
+            m_DictationRecognizer.Start();
     }
 
     private void Update()
     {
+        if (player.chatIsActive)
+            m_DictationRecognizer.Start();
+    }
+
+
+    public void StartListening(string question, string[] acceptableAnswers,
+        System.Action correctCallback, System.Action incorrectCallback)
+    {
+        currentAcceptableAnswers = acceptableAnswers;
+        onCorrectAnswer = correctCallback;
+        onIncorrectAnswer = incorrectCallback;
+
+        TextToSpeech.Speak(question);
         m_DictationRecognizer.Start();
     }
 
+    private void CheckAnswer(string spokenText)
+    {
+        if (currentAcceptableAnswers == null) return;
+
+        foreach (string answer in currentAcceptableAnswers)
+        {
+            if (spokenText.ToLower().Contains(answer.ToLower()))
+            {
+                onCorrectAnswer?.Invoke();
+                m_DictationRecognizer.Stop();
+                return;
+            }
+        }
+
+        onIncorrectAnswer?.Invoke();
+    }
 }

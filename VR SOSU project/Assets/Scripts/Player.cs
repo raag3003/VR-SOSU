@@ -17,7 +17,7 @@ public class Player : MonoBehaviour
     public GameObject chatPanel, textObject, chatBox;
     public TMP_InputField chatField;
     public Color playerMessage, tutorMessage, info;
-    private bool chatIsActive = false;
+    public bool chatIsActive = false;
     private int maxMessages = 25;
 
     private bool isLLMProcessing = false;
@@ -66,6 +66,7 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        llm.enabled = false; // Disable the LLM when the game starts
         if (dictationScript != null)
         {
             dictationScript.OnTextRecognized += HandleDictationResult;
@@ -103,17 +104,21 @@ public class Player : MonoBehaviour
 
         if (!chatField.isFocused)
         {
-            if (Input.GetKeyDown(KeyCode.M) && chatIsActive == false)
+            // Aktivere en hjælpe chat fumktion ved at trykke på Y på Meta Quest controlleren 
+            if (OVRInput.GetDown(OVRInput.Button.Four, OVRInput.Controller.LTouch) && chatIsActive == false)
             {
                 m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                 chatIsActive = true;
                 chatBox.SetActive(true);
-            }
-            else if (Input.GetKeyDown(KeyCode.M) && chatIsActive == true)
+                llm.enabled = true;  // Enable LLM when chat is opened
+            } // Lukker hjælpe chat fumktion ved at trykke på Y på Meta Quest controlleren
+            else if (OVRInput.GetDown(OVRInput.Button.Four, OVRInput.Controller.LTouch) && chatIsActive == true)
             {
                 m_Rigidbody.constraints = RigidbodyConstraints.None;
                 chatIsActive = false;
                 chatBox.SetActive(false);
+                llm.enabled = false;  // Disable LLM when chat is closed                                                                    
+                dictationScript.m_DictationRecognizer.Stop();
             }
         }
     }
