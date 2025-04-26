@@ -19,11 +19,18 @@ public class VRButton : MonoBehaviour
     // Public Unity Events we can use in the editor and tie other functions to.
     public UnityEvent onPressed, onReleased, onCorrectAnswer, onIncorrectAnswer;
 
+    public void Awake()
+    {
+        Renderer Button1 = GetComponent<Renderer>();
+    }
+
     // Checks if the current collider entering is the Button and sets off OnPressed event.
     private void OnTriggerEnter(Collider other)
     {
+        Renderer Button1 = GetComponent<Renderer> ();
         if (other.tag == "Button" && !_deadTimeActive)
         {
+            Button1.material.color = Color.gray;
             onPressed?.Invoke();
             Debug.Log("I have been pressed");
             if (dictationScript != null)
@@ -39,8 +46,10 @@ public class VRButton : MonoBehaviour
     // It will also call a Coroutine to make the button inactive for however long deadTime is set to.
     private void OnTriggerExit(Collider other)
     {
+        Renderer Button1 = GetComponent<Renderer>();
         if (other.tag == "Button" && !_deadTimeActive)
         {
+            Button1.material.color = Color.red;
             onReleased?.Invoke();
             Debug.Log("I have been released");
             StartCoroutine(WaitForDeadTime());

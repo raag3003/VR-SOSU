@@ -19,6 +19,10 @@ public class DictationScript : MonoBehaviour
     private System.Action onCorrectAnswer;
     private System.Action onIncorrectAnswer;
 
+    [Header("UI")]
+    public TMPro.TextMeshProUGUI Correct;
+    public TMPro.TextMeshProUGUI Incorrect;
+
     void Start()
     {
         m_DictationRecognizer = new DictationRecognizer();
@@ -51,6 +55,8 @@ public class DictationScript : MonoBehaviour
 
     private void Update()
     {
+        StartCoroutine(CheckFeedbackIsActive());
+
         if (player.chatIsActive)
             m_DictationRecognizer.Start();
     }
@@ -75,12 +81,30 @@ public class DictationScript : MonoBehaviour
         {
             if (spokenText.ToLower().Contains(answer.ToLower()))
             {
+                Correct.gameObject.SetActive(true);
                 onCorrectAnswer?.Invoke();
                 m_DictationRecognizer.Stop();
                 return;
+            } else
+            {
+                Incorrect.gameObject.SetActive(true);
             }
         }
 
         onIncorrectAnswer?.Invoke();
+    }
+
+    private IEnumerator CheckFeedbackIsActive()
+    {
+        if (Correct.gameObject.active == true)
+        {
+            yield return new WaitForSecondsRealtime(5);
+            Correct.gameObject.SetActive(false);
+        } else if (Incorrect.gameObject.active == true)
+        {
+            yield return new WaitForSecondsRealtime(5);
+            Incorrect.gameObject.SetActive(false);
+        }
+
     }
 }
