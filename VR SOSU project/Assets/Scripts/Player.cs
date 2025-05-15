@@ -44,6 +44,7 @@ public class Player : MonoBehaviour
     {
         SendMessageToChat(username + ": " + text, Message.MessageType.playerMessage);
         isLLMProcessing = true;
+        hasLLMResponded = false;
         ShowTypingIndicator();
         _ = llm.Chat(text, HandleReply, ReplyCompleted);
     }
@@ -105,14 +106,14 @@ public class Player : MonoBehaviour
         if (!chatField.isFocused)
         {
             // Aktivere en hjælpe chat fumktion ved at trykke på Y på Meta Quest controlleren 
-            if (OVRInput.GetDown(OVRInput.Button.Four, OVRInput.Controller.LTouch) && chatIsActive == false)
+            if ((OVRInput.GetDown(OVRInput.Button.Four, OVRInput.Controller.LTouch) || Input.GetKeyDown(KeyCode.C)) && chatIsActive == false)
             {
                 m_Rigidbody.constraints = RigidbodyConstraints.FreezePosition | RigidbodyConstraints.FreezeRotation;
                 chatIsActive = true;
                 chatBox.SetActive(true);
                 llm.enabled = true;  // Enable LLM when chat is opened
             } // Lukker hjælpe chat fumktion ved at trykke på Y på Meta Quest controlleren
-            else if (OVRInput.GetDown(OVRInput.Button.Four, OVRInput.Controller.LTouch) && chatIsActive == true)
+            else if ((OVRInput.GetDown(OVRInput.Button.Four, OVRInput.Controller.LTouch) || Input.GetKeyDown(KeyCode.C)) && chatIsActive == true)
             {
                 m_Rigidbody.constraints = RigidbodyConstraints.None;
                 chatIsActive = false;

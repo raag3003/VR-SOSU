@@ -57,7 +57,7 @@ public class DictationScript : MonoBehaviour
     {
         StartCoroutine(CheckFeedbackIsActive());
 
-        if (player.chatIsActive)
+        if (player.chatIsActive && m_DictationRecognizer.Status != SpeechSystemStatus.Running)
             m_DictationRecognizer.Start();
     }
 

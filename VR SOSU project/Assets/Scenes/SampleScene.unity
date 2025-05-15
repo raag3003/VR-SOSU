@@ -548,7 +548,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 2b93d8abe1f4e9d4abbd075cac34abc8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 867859737}
   m_SourcePrefab: {fileID: 100100000, guid: 2b93d8abe1f4e9d4abbd075cac34abc8, type: 3}
 --- !u!4 &54476126 stripped
 Transform:
@@ -689,9 +692,8 @@ MonoBehaviour:
   stream: 0
   playerName: Healthcare student
   AIName: Tutor
-  prompt: "You are a tutor guiding a healthcare student (SOSU student, a social and
-    healthcare assistant in training). Only give hints or keywords. Never answer
-    questions. Keep replies extremely short\u2014just a few words."
+  prompt: You are a tutor guiding a healthcare student (SOSU student, a social and
+    healthcare assistant in training). Only give hints or keywords.
   setNKeepToPrompt: 1
   chat: []
   grammarString: 
@@ -1078,7 +1080,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1809493963370784092, guid: 62a6b869d48d21f43922017f3e9c4bd7, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 327701115}
   m_SourcePrefab: {fileID: 100100000, guid: 62a6b869d48d21f43922017f3e9c4bd7, type: 3}
 --- !u!4 &177702102 stripped
 Transform:
@@ -1266,7 +1271,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3933280493416616043, guid: dad020cd91678cd42b25813a9058830f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 450881765}
   m_SourcePrefab: {fileID: 100100000, guid: dad020cd91678cd42b25813a9058830f, type: 3}
 --- !u!4 &209341833 stripped
 Transform:
@@ -1793,6 +1801,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 318836250}
   m_CullTransparentMesh: 1
+--- !u!1 &327701111 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1809493963370784092, guid: 62a6b869d48d21f43922017f3e9c4bd7, type: 3}
+  m_PrefabInstance: {fileID: 177702101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &327701115
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 327701111}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.266, y: 0.2632, z: 0.215}
+  m_Center: {x: 0.122992374, y: 0.1316, z: 0.0975}
 --- !u!1 &341742848
 GameObject:
   m_ObjectHideFlags: 0
@@ -1928,7 +1962,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: dd53036e09857fd46a994496325cbe64, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 540343723}
   m_SourcePrefab: {fileID: 100100000, guid: dd53036e09857fd46a994496325cbe64, type: 3}
 --- !u!4 &368695711 stripped
 Transform:
@@ -2187,7 +2224,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 714e09a3963baa8499b22435cf35a721, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 475071139}
   m_SourcePrefab: {fileID: 100100000, guid: 714e09a3963baa8499b22435cf35a721, type: 3}
 --- !u!4 &378153319 stripped
 Transform:
@@ -2538,6 +2578,32 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 1
+--- !u!1 &450881761 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3933280493416616043, guid: dad020cd91678cd42b25813a9058830f, type: 3}
+  m_PrefabInstance: {fileID: 209341832}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &450881765
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 450881761}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.4300001, y: 0.5799999, z: 0.30000004}
+  m_Center: {x: 0.21500005, y: 0.34680796, z: 0.29999244}
 --- !u!1 &461709258
 GameObject:
   m_ObjectHideFlags: 0
@@ -2676,11 +2742,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadTime: 1
-  question: "Hvordan kan plejen tilrettel\xE6gges, n\xE5r personen med kroniske smerter
-    laver mad i k\xF8kkenet?"
+  question: How can care be organized when the person with chronic pain is cooking
+    in the kitchen?
   acceptableAnswers:
-  - "Personlig st\xF8tte"
-  - Smertevenlig indretning
+  - Personal support
+  - Pain-friendly interior design
   dictationScript: {fileID: 1563895499}
   onPressed:
     m_PersistentCalls:
@@ -2694,8 +2760,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "Hvordan kan plejen tilrettel\xE6gges, n\xE5r personen
-            med kroniske smerter laver mad i k\xF8kkenet?"
+          m_StringArgument: How can care be organized when the person with chronic
+            pain is cooking in the kitchen?
           m_BoolArgument: 1
         m_CallState: 2
   onReleased:
@@ -2853,11 +2919,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadTime: 1
-  question: "Hvordan kan plejen tilrettel\xE6gges for en person med kroniske smerter,
-    n\xE5r vedkommende arbejder ved sit skrivebord?"
+  question: How can care be organized for a person with chronic pain when they work
+    at their desk?
   acceptableAnswers:
-  - Ergonomi
-  - Forebyggelse
+  - Ergonomics
+  - Prevention
   dictationScript: {fileID: 1563895499}
   onPressed:
     m_PersistentCalls:
@@ -2871,8 +2937,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "Hvordan kan plejen tilrettel\xE6gges for en person med
-            kroniske smerter, n\xE5r vedkommende arbejder ved sit skrivebord?"
+          m_StringArgument: How can care be organized for a person with chronic pain
+            when they work at their desk?
           m_BoolArgument: 1
         m_CallState: 2
   onReleased:
@@ -2982,6 +3048,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 469081866}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &475071136 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 714e09a3963baa8499b22435cf35a721, type: 3}
+  m_PrefabInstance: {fileID: 378153318}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &475071139
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 475071136}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.0029994112, y: 0.0017487655, z: 0.0034440698}
+  m_Center: {x: 0.00015805464, y: -2.2034076e-11, z: 0.00073946005}
 --- !u!1 &501320637
 GameObject:
   m_ObjectHideFlags: 0
@@ -3281,13 +3373,42 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 739112a2307451346b51ae6c545d25e9, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1940996660}
   m_SourcePrefab: {fileID: 100100000, guid: 739112a2307451346b51ae6c545d25e9, type: 3}
 --- !u!4 &519499305 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 739112a2307451346b51ae6c545d25e9, type: 3}
   m_PrefabInstance: {fileID: 519499304}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &540343722 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: dd53036e09857fd46a994496325cbe64, type: 3}
+  m_PrefabInstance: {fileID: 368695710}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &540343723
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 540343722}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 9, z: 8}
+  m_Center: {x: 0, y: 5, z: -1}
 --- !u!1001 &564158272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4742,6 +4863,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 853524790}
   m_CullTransparentMesh: 1
+--- !u!1 &867859733 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 2b93d8abe1f4e9d4abbd075cac34abc8, type: 3}
+  m_PrefabInstance: {fileID: 54476125}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &867859737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 867859733}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 66.4428, y: 31.596718, z: 67.90066}
+  m_Center: {x: -327.99997, y: 15.797871, z: -225.98715}
 --- !u!1001 &874049081
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4883,7 +5030,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: edbdb6968f61df84daaf40abe1d556e4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2019630681}
   m_SourcePrefab: {fileID: 100100000, guid: edbdb6968f61df84daaf40abe1d556e4, type: 3}
 --- !u!4 &881070835 stripped
 Transform:
@@ -6375,6 +6525,32 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6598815579406187027, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
   m_PrefabInstance: {fileID: 1175442068}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1274323579 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+  m_PrefabInstance: {fileID: 1675414907}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1274323583
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1274323579}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.7100011, y: 0.78000003, z: 1.0300004}
+  m_Center: {x: -0.001936168, y: -0.2634929, z: -0.002671779}
 --- !u!1001 &1307886458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6883,6 +7059,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1436858591}
+  - component: {fileID: 1436858592}
   m_Layer: 0
   m_Name: -- XR --
   m_TagString: Untagged
@@ -6909,6 +7086,29 @@ Transform:
   - {fileID: 1545001429}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!136 &1436858592
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1436858590}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Height: 1.9
+  m_Direction: 1
+  m_Center: {x: -3.6, y: 0.82, z: -3.9}
 --- !u!1 &1437235518 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1670256624, guid: f6336ac4ac8b4d34bc5072418cdc62a0, type: 3}
@@ -7490,11 +7690,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deadTime: 1
-  question: "Hvordan kan man strukturer plejen for at forbedre personens s\xF8vnkvaliteten?"
+  question: How can care be structured to improve the person's sleep quality?
   acceptableAnswers:
-  - "s\xF8vnrytme"
-  - afslapningsteknikker
-  - sengekomfort
+  - sleep rhythm
+  - relaxation techniques
+  - bed comfort
   dictationScript: {fileID: 1563895499}
   onPressed:
     m_PersistentCalls:
@@ -7508,8 +7708,8 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: "Hvordan kan man strukturer plejen for at forbedre personens
-            s\xF8vnkvaliteten?"
+          m_StringArgument: How can care be structured to improve the person's sleep
+            quality?
           m_BoolArgument: 1
         m_CallState: 2
   onReleased:
@@ -8431,7 +8631,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d295abf3319e12447ae00d7eed7ef368, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.645874
+      value: -2.76
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d295abf3319e12447ae00d7eed7ef368, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8439,7 +8639,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d295abf3319e12447ae00d7eed7ef368, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -5.2935333
+      value: -5.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d295abf3319e12447ae00d7eed7ef368, type: 3}
       propertyPath: m_LocalRotation.w
@@ -8476,7 +8676,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: d295abf3319e12447ae00d7eed7ef368, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2040395424}
   m_SourcePrefab: {fileID: 100100000, guid: d295abf3319e12447ae00d7eed7ef368, type: 3}
 --- !u!4 &1661492441 stripped
 Transform:
@@ -8550,7 +8753,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8164078558771037576, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1274323583}
   m_SourcePrefab: {fileID: 100100000, guid: 6f37f24424dae974398993eb1bcd7822, type: 3}
 --- !u!4 &1675414908 stripped
 Transform:
@@ -9529,6 +9735,32 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1854718760}
   m_CullTransparentMesh: 1
+--- !u!1 &1940996656 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8164078558771037576, guid: 739112a2307451346b51ae6c545d25e9, type: 3}
+  m_PrefabInstance: {fileID: 519499304}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1940996660
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1940996656}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 268.6123, y: 188.69637, z: 123.53582}
+  m_Center: {x: -23.224117, y: -10.639276, z: 0.015625}
 --- !u!1 &2011281820
 GameObject:
   m_ObjectHideFlags: 0
@@ -9637,6 +9869,32 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2011281820}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2019630680 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: edbdb6968f61df84daaf40abe1d556e4, type: 3}
+  m_PrefabInstance: {fileID: 881070834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2019630681
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2019630680}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 4, y: 2.5, z: 0.5}
+  m_Center: {x: 0.4, y: 0.35, z: 0.05}
 --- !u!1 &2021423033
 GameObject:
   m_ObjectHideFlags: 0
@@ -9646,6 +9904,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2021423034}
+  - component: {fileID: 2021423035}
   m_Layer: 0
   m_Name: Kitchen
   m_TagString: Untagged
@@ -9681,6 +9940,53 @@ Transform:
   - {fileID: 684361136}
   m_Father: {fileID: 367478320}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2021423035
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2021423033}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 11.5, y: 2.5, z: 1}
+  m_Center: {x: -2.1, y: 0, z: -0.8}
+--- !u!1 &2040395423 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: d295abf3319e12447ae00d7eed7ef368, type: 3}
+  m_PrefabInstance: {fileID: 1661492440}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &2040395424
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040395423}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.6, y: 0.38, z: 1.1}
+  m_Center: {x: 0.67, y: 0.2, z: 0.6}
 --- !u!1 &2040945208
 GameObject:
   m_ObjectHideFlags: 0
