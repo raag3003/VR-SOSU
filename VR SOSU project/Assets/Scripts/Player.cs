@@ -42,11 +42,11 @@ public class Player : MonoBehaviour
 
     private void HandleDictationResult(string text)
     {
-        SendMessageToChat(username + ": " + text, Message.MessageType.playerMessage);
-        isLLMProcessing = true;
-        hasLLMResponded = false;
-        ShowTypingIndicator();
-        _ = llm.Chat(text, HandleReply, ReplyCompleted);
+            SendMessageToChat(username + ": " + text, Message.MessageType.playerMessage);
+            isLLMProcessing = true;
+            hasLLMResponded = false;
+            ShowTypingIndicator();
+            _ = llm.Chat(text, HandleReply, ReplyCompleted);
     }
 
     void OnDestroy()
@@ -118,7 +118,7 @@ public class Player : MonoBehaviour
                 m_Rigidbody.constraints = RigidbodyConstraints.None;
                 chatIsActive = false;
                 chatBox.SetActive(false);
-                llm.enabled = false;  // Disable LLM when chat is closed                                                                    
+                llm.enabled = false;  // Disable LLM when chat is closed                                    
                 dictationScript.m_DictationRecognizer.Stop();
             }
         }

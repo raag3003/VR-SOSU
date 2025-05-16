@@ -1,6 +1,9 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.XR.Interaction.Toolkit;
+using UnityEngine.XR.Interaction.Toolkit.Interactables;
+using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class VRButton : MonoBehaviour
 {
@@ -19,12 +22,67 @@ public class VRButton : MonoBehaviour
     // Public Unity Events we can use in the editor and tie other functions to.
     public UnityEvent onPressed, onReleased, onCorrectAnswer, onIncorrectAnswer;
 
+    private IXRSelectInteractor currentInteractor = null;
+    private XRBaseInteractable interactable;
+
     public void Awake()
     {
-        Renderer Button1 = GetComponent<Renderer>();
+        // Renderer Button1 = GetComponent<Renderer>();
+        // Get the XR interactable component
+        interactable = GetComponent<XRBaseInteractable>();
+        if (interactable == null)
+        {
+            // Add XR Simple Interactable if it doesn't exist
+            interactable = gameObject.AddComponent<XRSimpleInteractable>();
+        }
+
+        // Subscribe to interaction events
+        interactable.selectEntered.AddListener(OnSelectEntered);
+        interactable.selectExited.AddListener(OnSelectExited);
     }
 
-    // Checks if the current collider entering is the Button and sets off OnPressed event.
+    private void OnDestroy()
+    {
+        // Unsubscribe from events when destroyed
+        if (interactable != null)
+        {
+            interactable.selectEntered.RemoveListener(OnSelectEntered);
+            interactable.selectExited.RemoveListener(OnSelectExited);
+        }
+    }
+
+    private void OnSelectEntered(SelectEnterEventArgs args)
+    {
+        if (!_deadTimeActive)
+        {
+            currentInteractor = args.interactorObject;
+            onPressed?.Invoke();
+            Debug.Log("Button pressed");
+
+            if (dictationScript != null)
+            {
+                dictationScript.StartListening(question, acceptableAnswers,
+                    () => onCorrectAnswer?.Invoke(),
+                    () => onIncorrectAnswer?.Invoke());
+            }
+        }
+    }
+
+    private void OnSelectExited(SelectExitEventArgs args)
+    {
+        if (!_deadTimeActive && currentInteractor == args.interactorObject)
+        {
+            currentInteractor = null;
+            onReleased?.Invoke();
+            Debug.Log("Button released");
+            StartCoroutine(WaitForDeadTime());
+        }
+    }
+
+
+
+
+    /*// Checks if the current collider entering is the Button and sets off OnPressed event.
     private void OnTriggerEnter(Collider other)
     {
         Renderer Button1 = GetComponent<Renderer> ();
@@ -54,7 +112,7 @@ public class VRButton : MonoBehaviour
             Debug.Log("I have been released");
             StartCoroutine(WaitForDeadTime());
         }
-    }
+    }*/
 
     // Locks button activity until deadTime has passed and reactivates button activity.
     private IEnumerator WaitForDeadTime()

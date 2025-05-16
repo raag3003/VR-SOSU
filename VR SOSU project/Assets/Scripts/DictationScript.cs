@@ -5,15 +5,21 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Windows.Speech;
 using UnityEngine.Networking;
+using UnityEngine.Audio;
 
 public class DictationScript : MonoBehaviour
 {
     public Player player;
     private Text m_Recognitions;
+    private AudioSource audioSource; // Reference to the Audio Source component
 
     // Liste af strings som gemmer outputtet af dikationen
     public System.Action<string> OnTextRecognized;
     public DictationRecognizer m_DictationRecognizer;
+
+    [Header("Audio")]
+    public AudioClip correctSound;
+    public AudioClip incorrectSound;
 
     private string[] currentAcceptableAnswers;
     private System.Action onCorrectAnswer;
@@ -25,6 +31,7 @@ public class DictationScript : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>(); // Get the Audio Source component
         m_DictationRecognizer = new DictationRecognizer();
 
         // Når et ord bliver korrekt genkendt, tilføjes det til m_Recognitions og logges.
@@ -81,13 +88,17 @@ public class DictationScript : MonoBehaviour
         {
             if (spokenText.ToLower().Contains(answer.ToLower()))
             {
+                Debug.Log("Correct answer");
                 Correct.gameObject.SetActive(true);
+                audioSource.PlayOneShot(correctSound);
                 onCorrectAnswer?.Invoke();
                 m_DictationRecognizer.Stop();
                 return;
             } else
             {
+                Debug.Log("Incorrect answer");
                 Incorrect.gameObject.SetActive(true);
+                audioSource.PlayOneShot(incorrectSound);
             }
         }
 
