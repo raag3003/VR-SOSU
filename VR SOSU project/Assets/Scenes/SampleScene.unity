@@ -6698,7 +6698,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1157638652}
   m_CullTransparentMesh: 1
-<<<<<<< Updated upstream
 --- !u!1001 &1175442068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6787,8 +6786,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1.7100011, y: 0.78000003, z: 1.0300004}
   m_Center: {x: -0.001936168, y: -0.2634929, z: -0.002671779}
-=======
->>>>>>> Stashed changes
 --- !u!1001 &1307886458
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7351,6 +7348,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 564158273}
+  - {fileID: 1175442069}
   - {fileID: 1689598897}
   - {fileID: 1545001429}
   m_Father: {fileID: 0}
