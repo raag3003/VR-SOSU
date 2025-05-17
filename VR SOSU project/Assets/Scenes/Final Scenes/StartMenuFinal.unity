@@ -28491,9 +28491,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1342100410729444538, guid: dec1927d6e1859b4fb446d87c4bc9b85, type: 3}
+      propertyPath: m_AdditionalLightsShadowResolutionTier
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2888699020958894766, guid: dec1927d6e1859b4fb446d87c4bc9b85, type: 3}
       propertyPath: m_Name
       value: Light
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296660672482057668, guid: dec1927d6e1859b4fb446d87c4bc9b85, type: 3}
+      propertyPath: m_Shadows.m_Type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6296660672482057668, guid: dec1927d6e1859b4fb446d87c4bc9b85, type: 3}
+      propertyPath: m_Shadows.m_Strength
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
