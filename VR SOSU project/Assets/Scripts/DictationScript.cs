@@ -12,6 +12,7 @@ public class DictationScript : MonoBehaviour
     public Player player;
     private Text m_Recognitions;
     private AudioSource audioSource; // Reference to the Audio Source component
+    private bool IsRunningSpeech => m_DictationRecognizer?.Status == SpeechSystemStatus.Running;
 
     // Liste af strings som gemmer outputtet af dikationen
     public System.Action<string> OnTextRecognized;
@@ -64,7 +65,7 @@ public class DictationScript : MonoBehaviour
     {
         StartCoroutine(CheckFeedbackIsActive());
 
-        if (player.chatIsActive && m_DictationRecognizer.Status != SpeechSystemStatus.Running)
+        if (player.chatIsActive && !IsRunningSpeech)
             m_DictationRecognizer.Start();
     }
 
@@ -86,19 +87,25 @@ public class DictationScript : MonoBehaviour
 
         foreach (string answer in currentAcceptableAnswers)
         {
-            if (spokenText.ToLower().Contains(answer.ToLower()))
+            if (!player.chatIsActive)
             {
-                Debug.Log("Correct answer");
-                Correct.gameObject.SetActive(true);
-                audioSource.PlayOneShot(correctSound);
-                onCorrectAnswer?.Invoke();
-                m_DictationRecognizer.Stop();
-                return;
-            } else
-            {
-                Debug.Log("Incorrect answer");
-                Incorrect.gameObject.SetActive(true);
-                audioSource.PlayOneShot(incorrectSound);
+                if (spokenText.ToLower().Contains(answer.ToLower()))
+                {
+                    Debug.Log("Correct answer");
+                    Incorrect.gameObject.SetActive(false);
+                    Correct.gameObject.SetActive(true);
+                    audioSource.PlayOneShot(correctSound);
+                    onCorrectAnswer?.Invoke();
+                    m_DictationRecognizer.Stop();
+                    return;
+                }
+                else
+                {
+                    Debug.Log("Incorrect answer");
+                    Correct.gameObject.SetActive(false);
+                    Incorrect.gameObject.SetActive(true);
+                    audioSource.PlayOneShot(incorrectSound);
+                }
             }
         }
 

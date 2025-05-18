@@ -42,11 +42,14 @@ public class Player : MonoBehaviour
 
     private void HandleDictationResult(string text)
     {
+        if (chatIsActive)
+        {
             SendMessageToChat(username + ": " + text, Message.MessageType.playerMessage);
             isLLMProcessing = true;
             hasLLMResponded = false;
             ShowTypingIndicator();
             _ = llm.Chat(text, HandleReply, ReplyCompleted);
+        }
     }
 
     void OnDestroy()
