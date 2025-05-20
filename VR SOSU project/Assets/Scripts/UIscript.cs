@@ -17,8 +17,13 @@ public class UIscript : MonoBehaviour
     }
 
     // Loads the first scene (level 1)
-    public void StartGame()
+    public void Level1()
     {
         SceneManager.LoadScene(1);
+    }
+
+    public void BackToMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
