@@ -171,7 +171,7 @@ namespace Meta.WitAi
             OnPreLog?.Invoke(result, logCategory, logType);
 
             // Log
-            switch (logType)
+            /*switch (logType)
             {
                 case VLogLevel.Error:
                     UnityEngine.Debug.LogError(result);
@@ -182,7 +182,7 @@ namespace Meta.WitAi
                 default:
                     UnityEngine.Debug.Log(result);
                     break;
-            }
+            }*/
         }
 
         /// <summary>
