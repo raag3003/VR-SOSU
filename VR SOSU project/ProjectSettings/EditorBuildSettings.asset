@@ -6,20 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Start menu.unity
-    guid: 6190bb6b5f4d5964eb8ccedf4e1e25cd
+    path: Assets/Scenes/Final Scenes/StartMenuFinal.unity
+    guid: cdfab6b26ab9cd643900b61bf3b4f272
   - enabled: 1
     path: Assets/Scenes/Final Scenes/FinalApartment.unity
     guid: 0d8a33a45b6d9024cb44fdfc2853db48
-  - enabled: 0
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
-    path: Assets/Scenes/PrototypeRoom.unity
-    guid: 7a5f94c47655cc44eafff8d3ec9656af
-  - enabled: 0
-    path: Assets/Scenes/Final Scenes/StartMenuFinal.unity
-    guid: cdfab6b26ab9cd643900b61bf3b4f272
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 349973e1948214e4d8023991350656a0, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 052faaac586de48259a63d0c4782560b, type: 3}

@@ -3,12 +3,13 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Windows.Speech;
+//using UnityEngine.Windows.Speech;
 using UnityEngine.Networking;
 using UnityEngine.Audio;
 
 public class DictationScript : MonoBehaviour
 {
+    /*
     public Player player;
     private Text m_Recognitions;
     private AudioSource audioSource; // Reference to the Audio Source component
@@ -125,4 +126,5 @@ public class DictationScript : MonoBehaviour
         }
 
     }
+    */
 }

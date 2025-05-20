@@ -59,12 +59,14 @@ public class VRButton : MonoBehaviour
             onPressed?.Invoke();
             Debug.Log("Button pressed");
 
+            /*
             if (dictationScript != null)
             {
                 dictationScript.StartListening(question, acceptableAnswers,
                     () => onCorrectAnswer?.Invoke(),
                     () => onIncorrectAnswer?.Invoke());
             }
+            */
         }
     }
 

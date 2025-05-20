@@ -54,10 +54,12 @@ public class Player : MonoBehaviour
 
     void OnDestroy()
     {
+        /*
         if (dictationScript != null)
         {
             dictationScript.OnTextRecognized -= HandleDictationResult;
         }
+        */
     }
 
     void ReplyCompleted()
@@ -70,11 +72,13 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        /*
         llm.enabled = false; // Disable the LLM when the game starts
         if (dictationScript != null)
         {
             dictationScript.OnTextRecognized += HandleDictationResult;
         }
+        */
     }
 
     private void Update()
@@ -122,7 +126,7 @@ public class Player : MonoBehaviour
                 chatIsActive = false;
                 chatBox.SetActive(false);
                 llm.enabled = false;  // Disable LLM when chat is closed                                    
-                dictationScript.m_DictationRecognizer.Stop();
+                //dictationScript.m_DictationRecognizer.Stop();
             }
         }
     }
