@@ -11,7 +11,8 @@ public class VoiceScript : MonoBehaviour
     public AppVoiceExperience voiceExperience;
     public UnityEvent onPressed, onReleased, onCorrectAnswer, onIncorrectAnswer;
     private bool isPressed;
-
+    public string Korrekt = "Så fik du vasket ansigtet";
+    public string Forkert = "Det vat godt gået";
 
     // Start is called before the first frame update
     void Start()
@@ -22,19 +23,21 @@ public class VoiceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetUp(OVRInput.Button.One) || Input.GetKey(KeyCode.K) || isPressed)
+        /*if (OVRInput.GetUp(OVRInput.Button.One) || Input.GetKey(KeyCode.K))
         {
             voiceExperience.Activate();
-        }
+            Debug.Log("Listening from input");
+        }*/
 
 
 
     }
 
-    public void VoiceActivate()
+    /*public void VoiceActivate()
     {
         voiceExperience.Activate();
-    }
+        Debug.Log("Listening from button");
+    }*/
 
 
 
@@ -49,6 +52,7 @@ public class VoiceScript : MonoBehaviour
     {
         isPressed = false;
         onReleased?.Invoke();
+        voiceExperience.Activate();
         Debug.Log("Button released");
     }
 }
