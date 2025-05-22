@@ -20,62 +20,48 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2025-05-19T03:12:50-0700
     trainingStatus: 1
-    lastTrainDuration: 70
-    lastTrainedAt: 2025-05-20T14:05:48-0700
-    nextTrainAt: 2025-05-20T14:04:38-0700
+    lastTrainDuration: 49
+    lastTrainedAt: 2025-05-19T03:31:59-0700
+    nextTrainAt: 2025-05-19T03:31:10-0700
     intents:
     - id: 9903117529734578
       name: Answer
       entities:
-      - name: A:A
-        id: 584141351380834
-      - name: B:B
-        id: 1460917034876522
-    - id: 699469582489977
-      name: Forkert
+      - name: Svar:Svar
+        id: 1350394776241503
+    - id: 1210344660109123
+      name: Correct
+      entities: []
+    - id: 1119279983562090
+      name: Svar_Sp_rgsm_l
       entities:
-      - name: B:B
-        id: 1460917034876522
-    - id: 1264120885210594
-      name: Rigtigt
-      entities:
-      - name: A:A
-        id: 584141351380834
-      - name: B:B
-        id: 1460917034876522
-    - id: 706868178518268
-      name: Wrong
-      entities:
-      - name: B:B
-        id: 1460917034876522
+      - name: Svar:Svar
+        id: 1350394776241503
     entities:
-    - name: A
-      id: 689398033824972
+    - name: Svar
+      id: 1598377214130926
       lookups:
       - free-text
       - keywords
       roles:
-      - name: A
-        id: 584141351380834
+      - name: Svar
+        id: 1350394776241503
+      - name: Wrong
+        id: 608798984843954
       keywords:
-      - keyword: "Det var godt g\xE5et"
+      - keyword: '"Du kan vaske dig i ansigtet"'
         synonyms:
-        - "det var godt g\xE5et"
-      - keyword: "S\xE5 fik du vasket ansigtet"
+        - '"du kan vaske dig i ansigtet"'
+        - du kan vaske dig i ansigtet
+      - keyword: 1
         synonyms:
-        - "s\xE5 fik du vasket ansigtet"
-    - name: B
-      id: 670896542492264
-      lookups:
-      - free-text
-      - keywords
-      roles:
-      - name: B
-        id: 1460917034876522
-      keywords:
-      - keyword: "Det var godt g\xE5et"
+        - 1
+      - keyword: Kan du vaske dig i ansigtet?
         synonyms:
-        - "det var godt g\xE5et"
+        - kan du vaske dig i ansigtet?
+      - keyword: "\u201DKan du vaske dig i ansigtet?\u201D"
+        synonyms:
+        - "\u201Dkan du vaske dig i ansigtet?\u201D"
     traits: []
     versionTags: []
     voices:
