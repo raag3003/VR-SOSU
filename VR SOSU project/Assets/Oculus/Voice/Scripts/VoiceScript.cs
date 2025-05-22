@@ -23,11 +23,11 @@ public class VoiceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetUp(OVRInput.Button.One) || Input.GetKey(KeyCode.K))
+        /*if (OVRInput.GetUp(OVRInput.Button.One) || Input.GetKey(KeyCode.K))
         {
             voiceExperience.Activate();
             Debug.Log("Listening from input");
-        }
+        }*/
 
 
 

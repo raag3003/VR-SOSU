@@ -20,9 +20,9 @@ MonoBehaviour:
     isPrivate: 1
     createdAt: 2025-05-19T03:12:50-0700
     trainingStatus: 1
-    lastTrainDuration: 154
-    lastTrainedAt: 2025-05-21T12:22:18-0700
-    nextTrainAt: 2025-05-21T12:19:44-0700
+    lastTrainDuration: 70
+    lastTrainedAt: 2025-05-20T14:05:48-0700
+    nextTrainAt: 2025-05-20T14:04:38-0700
     intents:
     - id: 9903117529734578
       name: Answer
@@ -76,9 +76,6 @@ MonoBehaviour:
       - keyword: "Det var godt g\xE5et"
         synonyms:
         - "det var godt g\xE5et"
-      - keyword: awesome
-        synonyms:
-        - awesome
     traits: []
     versionTags: []
     voices:
