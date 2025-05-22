@@ -22,7 +22,7 @@ public class VoiceScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (OVRInput.GetUp(OVRInput.Button.One) || Input.GetKey(KeyCode.K) || isPressed)
+        if (OVRInput.GetUp(OVRInput.Button.One) || Input.GetKey(KeyCode.K))
         {
             voiceExperience.Activate();
         }
@@ -38,17 +38,15 @@ public class VoiceScript : MonoBehaviour
 
 
 
-    public void OnSelectEntered(SelectEnterEventArgs args)
+    /*public void OnSelectEntered(SelectEnterEventArgs args)
     {
         isPressed = true;
-        onPressed?.Invoke();
-        Debug.Log("Button pressed");
+
     }
 
     public void OnSelectExited(SelectExitEventArgs args)
     {
         isPressed = false;
-        onReleased?.Invoke();
-        Debug.Log("Button released");
-    }
+
+    }*/
 }
